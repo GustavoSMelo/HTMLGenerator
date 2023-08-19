@@ -1,13 +1,9 @@
-import { NextPage } from "next";
 import React from "react";
 import { IBaseHTMLProps } from "./interface";
 
-const BaseHTML: React.FC<IBaseHTMLProps> = ({title, taxonomy}) => (
-    <html lang="ptbr">
-        <head>
-            <meta charSet="utf-8" />
-            <title>{taxonomy}</title>
-        </head>
+const BaseHTML: React.FC<IBaseHTMLProps> = ({ title, taxonomy }) => (
+    <html>
+        <head></head>
         <body>
             {title}
         </body>

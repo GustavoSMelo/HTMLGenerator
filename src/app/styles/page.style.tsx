@@ -52,5 +52,6 @@ export const Dropbox = styled.div`
 
     .fileInformation > span {
         margin-left: 10px;
+        text-decoration: dotted #2AE310;
     }
 `;
