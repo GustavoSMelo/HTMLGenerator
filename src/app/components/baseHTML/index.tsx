@@ -5,7 +5,7 @@ const BaseHTML: React.FC<IBaseHTMLProps> = ({ title, taxonomy }) => (
     <html>
         <head></head>
         <body>
-            {title}
+            <h1>{title}</h1>
         </body>
     </html>
 );
