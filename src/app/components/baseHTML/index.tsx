@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import React from "react";
 import { IBaseHTMLProps } from "./interface";
 
-const BaseHTML:NextPage<IBaseHTMLProps> = ({title, taxonomy}) => (
+const BaseHTML: React.FC<IBaseHTMLProps> = ({title, taxonomy}) => (
     <html lang="ptbr">
         <head>
             <meta charSet="utf-8" />

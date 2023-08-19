@@ -1,21 +1,29 @@
 import * as XLSX from "xlsx";
-import * as fs from 'fs';
 import { IExcelFields } from "./interface";
 import { renderToStaticMarkup } from 'react-dom/server';
-import { randomUUID } from "crypto";
+import { randomBytes } from "crypto";
 import BaseHTML from "../baseHTML";
+import path from 'path';
+import FileSaver from "file-saver";
+import JSZip from "jszip";
 
-const genHTML = (jsonFromExcel: IExcelFields[]) => {
-    console.log(jsonFromExcel);
+const genHTML = async (jsonFromExcel: IExcelFields[]) => {
+    const zip = new JSZip();
 
     jsonFromExcel.forEach(item => {
-        const taxonomy = item.taxonomia ? item.taxonomia : randomUUID().toString();
+        const taxonomy = item.taxonomia.toString();
         const title = item.titulo ? item.titulo.toString() : "empty title";
 
+        const html = renderToStaticMarkup(<BaseHTML taxonomy={taxonomy} title={title} />);
+        const blob = new Blob([html], {type: "html"});
 
-        const html = renderToStaticMarkup(<Base taxonomy={taxonomy} title={title} />);
+        zip.file(`${taxonomy}.html`,blob);
+
     });
 
+    zip.folder('generated');
+    const zipFile = await zip.generateAsync({type: 'blob'});
+    FileSaver.saveAs(zipFile, 'generated.zip');
 }
 
 const processFile = async (file: File) => {
