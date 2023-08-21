@@ -28,6 +28,17 @@ export const Container = styled.main`
         color: #fff;
         transition: .4s;
     }
+
+    @media screen and (max-width: 400px) {
+        p {
+            margin: 0 2.3rem;
+        }
+
+        button {
+            max-width: 80%;
+            padding: 30px 27.5% !important;
+        }
+    }
 `;
 
 export const Dropbox = styled.div`
@@ -53,5 +64,14 @@ export const Dropbox = styled.div`
     .fileInformation > span {
         margin-left: 10px;
         text-decoration: dotted #2AE310;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 80%;
+        padding: 27.5%;
+    }
+
+    @media screen and (max-width: 400px) {
+        padding: 27.5% 30px;
     }
 `;

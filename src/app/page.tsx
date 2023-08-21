@@ -43,7 +43,7 @@ const Home = () => {
             setFile(acceptedFiles[0]);
         }
 
-        setInterval(() => setIsPopup(false), 3000)
+        setInterval(() => setIsPopup(false), 4000);
     }, [acceptedFiles]);
 
     const handleFile = () => {
@@ -80,7 +80,7 @@ const Home = () => {
                                     accept="text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                                 />
                                 <TfiImport className='importIcon' />
-                                <p>Drag and drop some files here, or click to select files</p>
+                                <p>Drag and drop your file here, or click to select</p>
 
                                 {file && (
                                     <p className="fileInformation">
