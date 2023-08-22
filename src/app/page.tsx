@@ -28,17 +28,7 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-
-        // if (acceptedFiles[0] && (!acceptedFiles[0]?.name.includes('.xlsx') || !acceptedFiles[0]?.name.includes('.html'))) {
-        //     setIsPopup(true);
-        //     setPopupInformation({
-        //         popupType: 'fail',
-        //         text: 'The file type is incorrect or not supported'
-        //     });
-
-        // } else
-
-        if (acceptedFiles[0]) {
+         if (acceptedFiles[0]) {
             setIsPopup(true);
             setPopupInformation({
                 popupType: 'success',
