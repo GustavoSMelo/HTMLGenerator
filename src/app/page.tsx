@@ -27,7 +27,7 @@ const Home = () => {
 
     useEffect(() => {
 
-        if (acceptedFiles[0] && (!acceptedFiles[0]?.name.includes('.xlsx') || acceptedFiles[0]?.name.includes('.csv'))) {
+        if (acceptedFiles[0] && !acceptedFiles[0]?.name.includes('.xlsx')) {
             setIsPopup(true);
             setPopupInformation({
                 popupType: 'fail',
@@ -72,12 +72,12 @@ const Home = () => {
                         <Container>
                             <h1>HTML Generator</h1>
 
-                            <p>Import a csv/xls file to generate a html for each line</p>
+                            <p>Import a xlsx file to generate a html for each line</p>
 
                             <Dropbox {...getRootProps()}>
                                 <input
                                     {...getInputProps()}
-                                    accept="text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                    accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                                 />
                                 <TfiImport className='importIcon' />
                                 <p>Drag and drop your file here, or click to select</p>

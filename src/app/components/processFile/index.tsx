@@ -26,7 +26,6 @@ const genHTML = async (
 
         });
 
-        zip.folder('generated');
         const zipFile = await zip.generateAsync({type: 'blob'});
         FileSaver.saveAs(zipFile, 'generated.zip');
 
