@@ -27,7 +27,7 @@ const Home = () => {
 
     useEffect(() => {
 
-        if (acceptedFiles[0] && !acceptedFiles[0]?.name.includes('.xlsx')) {
+        if (acceptedFiles[0] && (!acceptedFiles[0]?.name.includes('.xlsx'))) {
             setIsPopup(true);
             setPopupInformation({
                 popupType: 'fail',
