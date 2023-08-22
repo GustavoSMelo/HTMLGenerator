@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IOption } from "./page.interface";
 
 export const Container = styled.main`
     display: flex;
@@ -20,6 +21,7 @@ export const Container = styled.main`
         border: none;
         border-radius: 10px;
         transition: .4s;
+        margin-bottom: 30px;
     }
 
     button:hover {
@@ -73,5 +75,41 @@ export const Dropbox = styled.div`
 
     @media screen and (max-width: 400px) {
         padding: 27.5% 30px;
+    }
+`;
+
+export const OptionButtons = styled.div<IOption>`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    button {
+        padding: 10px 40px;
+        cursor: pointer;
+        font-size: 14pt;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .btnFile {
+        background-color: ${props => props.option === 'file' ? "#101010" : "#fff"};
+        color: ${props => props.option === 'file'? "#fff" : "#101010"};
+        border: solid 3px ${props => props.option === 'file'? "#fff" : "#101010"};
+    }
+
+    .btnTemplate {
+        background-color: ${props => props.option === 'template' ? "#101010" : "#fff"};
+        color: ${props => props.option === 'template'? "#fff" : "#101010"};
+        border: solid 3px ${props => props.option === 'template'? "#fff" : "#101010"};
+    }
+
+    @media screen and (max-width: 400px) {
+        flex-direction: column;
+        justify-content: center;
+
+        button {
+            max-width: fit-content;
+        }
     }
 `;
